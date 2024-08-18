@@ -66,7 +66,10 @@ function decode(expr) {
             }
         }
         let morseChar = answer.join('');
-        result += MORSE_TABLE[morseChar];
+        if (morseChar == '') {
+            result += ' ';
+        }
+        else {result += MORSE_TABLE[morseChar]};
     }
     return result;
 }
